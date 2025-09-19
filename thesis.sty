@@ -127,29 +127,14 @@ St. John's \hfill Newfoundland
 % rotated 90 degrees and with the caption "Popuation over Time."
 % We can refer to that figure as Figure~\ref{fig:barchart} in the text.
 %
-\newcommand{\munepsfig}[3][scale=1.0]{%
-	\begin{figure}[!htbp]
-		\centering
-		\vspace{2mm}
-		\includegraphics[#1]{figures/#2.eps}
-		\caption{#3}
-		\label{fig:#2}
-	\end{figure}
-}
+
+
 
 % \munlepsfig command inserts a figure in landscape mode.  The
 % entire page is rotated to accommodate the figure.  The arguments
 % are the same as for \munepsfig, above
 %
-\newcommand{\munlepsfig}[3][scale=1.0]{%
-	\begin{sidewaysfigure}[!htbp]
-		\centering
-		\vspace{2mm}
-		\includegraphics[#1]{figures/#2.eps}
-		\caption{#3}
-		\label{fig:#2}
-	\end{sidewaysfigure}
-}
+
 
 % The 'muntxtfig' environment is used to insert 'textual' figures
 % into our document, such as brief source code snippets.  Usage is:
@@ -173,25 +158,7 @@ St. John's \hfill Newfoundland
 %   Some text
 % \end{muntxtfig}
 %
-\newenvironment{muntxtfig}[4][\spacing]{%
-	\begin{figure}[!htbp]
-		\centering
-		\def\muncaption{#3}%
-		\def\munlabel{#2}%
-		\renewcommand{\baselinestretch}{#1}%
-		\normalsize%
-		\begin{minipage}{#4}
-		\hrule \hrule
-		\bigskip
-}{%
-		\hrule \hrule
-		\end{minipage}
-		\renewcommand{\baselinestretch}{\spacing}%
-		\normalsize%
-		\caption{\muncaption}
-		\label{fig:\munlabel}
-	\end{figure}
-}
+
 
 % The 'muntab' environment is used to insert a new table into our document.
 % Usage is:
