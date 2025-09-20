@@ -1,5 +1,12 @@
 \documentclass[letterpaper,12pt]{report}
 \usepackage{thesis}
+\usepackage{float}
+\usepackage[hyphens]{url}            % para partir URLs largas
+\usepackage{graphicx}
+\usepackage{latexsym}
+\usepackage{rotating}
+\usepackage{natbib}                  % <--- habilita \citep y \citet
+\usepackage[colorlinks=true,linkcolor=black,citecolor=black]{hyperref} % cargar al final si no hay paquetes muy especiales
 
 \begin{document}
 
@@ -43,8 +50,8 @@
 \include{capitulo02}
 \include{capitulo03}
 
+%\printbibliography
 \include{bib}
-
 % If you have no appendices, remove the following two lines.
 % If you have more appdences, add them as necessary.
 \appendix
