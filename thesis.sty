@@ -175,18 +175,18 @@ Cusco \hfill Perú
 %	- 'caption' is the caption placed above the Table.
 %
 %
-\newenvironment{muntab}[3]{%
-	\begin{table}[!htbp]
-		\centering
-		\caption{#3}
-		\label{tab:#2}
-		\vspace{2mm}
-		\begin{tabular}{#1}
-}{%
-		\end{tabular}
-	\end{table}
-}
 
+\newenvironment{muntab}[3]{%
+    \begin{table}[!htbp]
+        \centering
+        \caption{#3}
+        \label{tab:#2}
+        \vspace{2mm}
+        \begin{tabular}{#1}
+}{%
+        \end{tabular}
+    \end{table}
+}
 % The 'munltab' environment is like muntab, but displays the table
 % in landscape mode on its own page.  See muntab environment for usage.
 %

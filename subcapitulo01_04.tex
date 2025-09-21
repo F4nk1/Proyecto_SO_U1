@@ -29,6 +29,67 @@ Entre las funciones principales se incluyen:
     evitando conflictos al acceder a recursos compartidos.
 \end{itemize}
 
+\newpage
+
+Razones para la creación de un proceso
+
+\begin{table}[!htbp]
+\centering
+\begin{tabular}{|p{4cm}|p{9cm}|}
+\hline
+\textbf{Tipo de proceso} & \textbf{Descripción} \\
+\hline
+Proceso por lotes & El SO procesa trabajos en lote desde cinta/disco. Lee secuencias de control de trabajos automáticamente. \\
+\hline
+Sesión interactiva & Usuario inicia sesión desde un terminal. \\
+\hline
+Servicio del sistema & El SO crea procesos para servicios en segundo plano (ej: impresión) sin espera del usuario. \\
+\hline
+Proceso hijo & Proceso existente crea nuevos procesos para modularidad o paralelismo. \\
+\hline
+\end{tabular}
+\renewcommand{\tablename}{Tabla}
+\caption{Razones comunes para la creación de procesos en un sistema operativo. Fuente: \cite{sistemas_operativos}}
+\label{tab:razones_creacion_procesos}
+\end{table}
+
+\newpage
+
+Razones para la terminación de un proceso.
+\begin{table}[h]
+\centering
+\begin{tabular}{|p{4cm}|p{10cm}|}
+\hline
+Finalización normal & Completación voluntaria mediante llamada al sistema. \\
+\hline
+Límite de tiempo & Exceso de tiempo de ejecución o espera. \\
+\hline
+Memoria no disponible & Memoria insuficiente o acceso no permitido. \\
+\hline
+Error de protección & Uso no autorizado de recursos. \\
+\hline
+Error aritmético & Operación inválida (ej: división por cero). \\
+\hline
+Fallo de E/S & Error en operación de entrada/salida. \\
+\hline
+Instrucción inválida & Ejecución de instrucción inexistente. \\
+\hline
+Instrucción privilegiada & Uso de instrucción reservada al SO. \\
+\hline
+Datos inapropiados & Datos erróneos o no inicializados. \\
+\hline
+Intervención externa & Terminación por operador o SO. \\
+\hline
+Terminación por padre & Finalización por proceso padre (automática o solicitada). \\
+\hline
+\end{tabular}
+\renewcommand{\tablename}{Tabla}
+\caption{La tabla refleja cómo los sistemas operativos gestionan y controlan la ejecución de procesos, garantizando estabilidad, seguridad y uso eficiente de los recursos. fuente: \cite{sistemas_operativos}}
+\label{tab:razones_terminacion}
+\end{table}
+
+\newpage
+
 \section{Gestión de memoria}
 La gestión de memoria es fundamental para que el sistema operativo asigne y libere espacio de la memoria principal (RAM) a los procesos, aislando cada espacio de direcciones 
 y permitiendo la ejecución concurrente de múltiples programas. En esencia, el administrador de memoria asegura que la CPU pueda cargar en RAM las instrucciones y datos necesarios 
