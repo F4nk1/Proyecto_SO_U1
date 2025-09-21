@@ -1,0 +1,33 @@
+\chapter{revision de sistemas operativos}
+\section{Linux}
+\subsection{Breve historia y proposito}
+Linux es un sistema operativo Unix-like de código abierto iniciado en 1991 por Linus Torvalds. Está diseñado como un núcleo (kernel) monolítico, modular y multitarea.
+Originalmente escrito para PCs i386, ha evolucionado hasta ofrecer compatibilidad POSIX y soporte extenso de hardware. Su desarrollo se rige por el modelo de código 
+abierto, donde “las mejoras provienen de muchos contribuyentes corporativos e individuales” y la dirección la marca la comunidad, no un único proveedor.\cite{wikipedia5} \cite{oci2024}
+
+\subsection{Arquitectura}
+Linux utiliza una arquitectura de kernel monolítico. Sin embargo, es importante destacar que es un kernel monolítico moderno que incorpora características de los diseños modulares. El kernel completo, incluidos todos sus controladores de dispositivos (drivers), 
+se ejecuta en un único espacio de direcciones en modo kernel (espacio de kernel). No obstante, soporta la carga y descarga dinámica de módulos (por ejemplo, drivers de hardware) en tiempo de ejecución, lo que proporciona una flexibilidad similar a la de los 
+micronúcleos sin sacrificar el rendimiento de las llamadas al sistema propias de un diseño monolítico. \cite{love2010}(pag. 7)
+\subsection{Lenguaje de implementacion}
+El núcleo de Linux está principalmente escrito en C, con algunas partes críticas en lenguaje ensamblador para optimizar el rendimiento y la interacción directa con el hardware. Las aplicaciones del espacio de usuario pueden estar escritas en cualquier lenguaje (C, C++, Python, Rust, etc.).
+\subsection{Componentes principales}
+\begin{itemize}
+    \item \textbf{Gestión de memoria}: Asignación y protección
+    \item \textbf{Planificación de procesos}: Decidir qué procesos usan la CPU
+    \item \textbf{Controladores de dispositivos}: Drivers para hardware
+    \item \textbf{Sistema de llamadas del sistema} y \textbf{seguridad}
+    \item \textbf{Sistema de archivos virtual (VFS)}: Unifica diversos formatos, modelos de sincronización y módulos adicionales.
+\end{itemize} \cite{oci2024}
+\subsection{Comunidad y documentación}
+Linux tiene una de las comunidades de código abierto más grandes y activas del mundo. Está mantenido por miles de desarrolladores de empresas (Red Hat, Google, Intel, IBM, etc.) y colaboradores individuales.
+\begin{itemize}
+    \item \textbf{Documentación}: La documentación es extensa. Incluye:
+    \begin{itemize}
+        \item El \texttt{man} (manual pages) integrado
+        \item El proyecto de documentación del kernel (\url{https://docs.kernel.org/})
+        \item Wikis (como Arch Wiki)
+        \item Foros (Stack Overflow, LinuxQuestions.org)
+        \item Libros técnicos especializados
+    \end{itemize}
+\end{itemize}

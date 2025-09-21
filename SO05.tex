@@ -1,0 +1,39 @@
+\chapter{revision de sistemas operativos}
+\section{MINIX 3}
+\subsection{Breve historia y proposito}
+MINIX fue creado en 1987 por Andrew Tanenbaum como herramienta docente para sistemas operativos. 
+MINIX 3 (anunciado en 2005) es una reimplementación orientada a fiabilidad y modularidad. Su objetivo es ser un SO POSIX fiable y recuperable ante fallos
+Es un sistema Unix-like de código abierto, escrito completamente desde cero (sin código AT&T) y compatible con la versión 7 de Unix y POSIX.\cite{usenix2010} (pag.10)
+Tanenbaum y colaboradores diseñaron MINIX 3 para aplicaciones críticas y educativas, enfatizando la corrección por sobre el máximo rendimiento.
+\subsection{Arquitectura}
+MINIX 3 emplea un microkernel muy reducido que sólo maneja interrupciones, gestión básica de procesos y comunicación IPC.
+Casi todo lo demás corre en espacio de usuario como servidores independientes: controladores de dispositivos, gestor de archivos, gestor de procesos, gestor de memoria, etc. En cada servidor se confina su función (“cada servidor tiene responsabilidad limitada”)
+ y se aísla para evitar que un fallo afecte al sistema completo.Este diseño multiserver (ilustrado en la figura) permite aislar fallos: por ejemplo, el servidor de reencarnación reinicia automáticamente componentes defectuosos.\cite{csvu2007}
+ \newcommand{\mymunfig}[3][scale=1.0]{%
+  \begin{figure}[!htbp]
+    \centering
+    \includegraphics[#1]{figures/#2}\usepackage{thesis}
+    \caption{#3}
+    \label{fig:#2}
+  \end{figure}
+}
+
+\mymunfig[width=0.8\textwidth]{multiserver.png}{la Estructura de MINIX 3 Fuente: \cite{usenix2010}}
+
+\subsection{Lenguaje de implementacion}
+Está escrito principalmente en C, con pequeñas secciones en ensamblador para la inicialización de hardware y rutinas de bajo nivel.
+\subsection{Componentes principales}
+\begin{itemize}
+    \item \textbf{Gestión de procesos:} Proceso gestor supervisa creación/terminación y recolección de fallos
+    \item \textbf{Memoria:} Microkernel provee segmentación/páginas básicas; gestor en usuario administra espacio virtual
+    \item \textbf{Sistema de archivos:} Servidor de archivos (Mini-FS) con soporte POSIX
+    \item \textbf{Dispositivos:} Drivers ejecutados fuera del kernel como procesos de usuario aislados
+    \item \textbf{Interfaz de usuario:} Soporte para X11 o GUI simple (EDE) como otros Unix
+\end{itemize} \cite{usenix2010}(pag. 12)
+\subsection{Comunidad y documentación}
+MINIX 3, aunque más pequeño, tiene presencia en la comunidad académica. Hasta 2010 
+contaba con $\sim$1.7 millones de visitas en su web oficial y 300.000 descargas de CD\footnote{\url{usenix.org}}. 
+Ha participado en Google Summer of Code (2008--2010) y dispone de wiki, grupos de discusión 
+y reseñas en foros. La documentación incluye el libro ``Operating Systems: Design and 
+Implementation'' de Tanenbaum (3ª ed.) y artículos en congreso\footnote{\url{https://www.inf.ufrgs.br/~johann/sisop1/minixpage.html}}. 
+así como repositorios de código público (Github).

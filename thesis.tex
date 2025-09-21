@@ -1,20 +1,19 @@
 \documentclass[letterpaper,12pt]{report}
+
+% Paquetes necesarios
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+\usepackage{graphicx}
+\usepackage{url}      % Para manejar URLs
+\usepackage{natbib}   % Para citas tipo APA-like
+\bibliographystyle{apalike} % estilo de bibliografía
 \usepackage{thesis}
 
 \begin{document}
 
 \pagenumbering{roman}
 
-% Fill in the title, author, degree name, department, and month/year.
-% Upon completion, this should look like the following:
-%\thesistitle
-%	{Complicated and Important-Sounding Thesis Title}
-%	{John P. Doe}
-%	{Master of Science}
-%	{Department of Computer Science}
-%	{May 2009}
-% The \thesistitle definition is in thesis.sty.  Other customizations
-% can be made there.
 \thesistitle
 	{Metathesis: \\
 	 A \LaTeX\ template to Typeset Your Thesis for \\
@@ -43,10 +42,15 @@
 \include{capitulo02}
 \include{capitulo03}
 
-\include{bib}
+% ===== ¡CORRECCIÓN IMPORTANTE! =====
+% COMENTA esta línea (elimina el include{bib}):
+%\include{bib}
+
+% DESCOMENTA esta línea (usa \bibliography{ref}):
+\bibliography{ref}
 
 % If you have no appendices, remove the following two lines.
-% If you have more appdences, add them as necessary.
+% If you have more appendices, add them as necessary.
 \appendix
 \include{apdxa}
 

@@ -1,0 +1,30 @@
+\chapter{revision de sistemas operativos}
+\section{xv6}
+\subsection{Breve historia y proposito}
+xv6 es un sistema operativo educativo inspirado en Unix V6, desarrollado en 2006 por el MIT para su curso de sistemas operativos.
+El propósito fue crear un kernel Unix simple y moderno (para x86 multiprocesador) que sustituyera a la versión 6 de Unix, de difícil manejo en la enseñanza. 
+xv6 “sigue de cerca la estructura de Unix V6 pero está escrito en C ANSI y se ejecuta en máquinas Intel multiprocesador”. \cite{pdos2016}
+\subsection{Arquitectura}
+xv6 es un kernel monolítico minimalista: todo el sistema operativo principal corre con privilegios de kernel, sin separación en procesos de servidor independientes
+xv6 soporta multiprocesadores (usando bloqueos y la estructura de hilos del kernel) pero no provee drivers de red o gráficos avanzados. Los componentes principales 
+incluyen: la planificación de procesos por round-robin, paginación de memoria (espacio de usuario contiguo, direcciones separadas por proceso), un sistema de archivos 
+tipo Unix V6 sencillo, y un conjunto reducido de llamadas al sistema.\cite{mit2022}(pag. 25)
+\subsection{Lenguaje de implementacion}
+xv6 está implementado en C para la mayor parte del kernel, con una pequeña cantidad de código de inicio y manejo de interrupciones escrito en ensamblador x86 (o RISC-V en sus versiones más recientes).
+\subsection{Componentes principales}
+\begin{itemize}
+    \item \textbf{Gestión de procesos:} Implementa procesos con un espacio de direcciones propio. El cambio de contexto y el planificador de procesos (round-robin) son muy simples y fáciles de entender.
+    
+    \item \textbf{Gestión de memoria:} Utiliza una paginación simple para aislar los espacios de direcciones de los procesos. Incluye un asignador de memoria simple para el kernel.
+    
+    \item \textbf{Sistema de archivos:} Implementa un sistema de archivos propio e inmemorizado (inspirado en el de Unix V6) con inodos. Es un ejemplo claro de cómo se organizan los bloques, inodos y directorios.
+    
+    \item \textbf{Sincronización:} Introduce mecanismos de sincronización primitivos pero fundamentales como los semáforos (sleep/wakeup) para manejar la concurrencia y las condiciones de carrera.
+    
+    \item \textbf{Interfaces del sistema:} Expone las llamadas al sistema tradicionales de UNIX (\texttt{fork}, \texttt{exit}, \texttt{wait}, \texttt{open}, \texttt{read}, \texttt{write}, \texttt{close}, etc.), permitiendo a los estudiantes ver la implementación exacta de estas primitivas fundamentales.
+\end{itemize} \cite{mit2022}(pag. 26-30)
+\subsection{Comunidad y documentación}
+xv6 es ampliamente utilizado en cursos universitarios de sistemas operativos como ejemplo. Su código fuente está disponible públicamente y sus autores distribuyen un libro/comentario para enseñar sus conceptos.
+\item \textbf{Documentación:} Su principal documentación es el libro 'xv6: a simple, Unix-like teaching operating system', que es un comentario línea por línea del código fuente que explica el 'qué' y el 'porqué' 
+de cada función y estructura. El código en sí está diseñado para ser legible y está ampliamente comentado.
+\end{itemize} \cite{mit2022}
