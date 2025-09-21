@@ -5,7 +5,10 @@
 \usepackage{graphicx}
 \usepackage{latexsym}
 \usepackage{rotating}
-\usepackage{natbib}                  % <--- habilita \citep y \citet
+\usepackage{natbib} 
+\usepackage{microtype}
+\usepackage{array}
+\usepackage{tabularx}                 
 \usepackage[colorlinks=true,linkcolor=black,citecolor=black]{hyperref} % cargar al final si no hay paquetes muy especiales
 
 \begin{document}
@@ -22,19 +25,18 @@
 %	{May 2009}
 % The \thesistitle definition is in thesis.sty.  Other customizations
 % can be made there.
-\thesistitle
-	{Metathesis: \\
-	 A \LaTeX\ template to Typeset Your Thesis for \\
-	 Submission to the School of Graduate Studies  \\
-	 \footnotesize{\sl (Changed the title by modifying the file
-	  \texttt{thesis.tex})}}
-	{\emph{my-name} (change this in \texttt{thesis.tex})}
-	{Master of \emph{faculty} \textbf{or} Doctor of Philosophy
-	 (change this in \texttt{thesis.tex})}
-	{Department of \emph{dept-name}
-	 (change this in \texttt{thesis.tex})}
-	{\emph{Month Year} (change this in \texttt{thesis.tex}, too)}
 
+\thesistitle
+    {Proyecto de Curso: \\ 
+     Análisis, Diseño y Construcción de un Sistema Operativo desde Cero}
+    {Castro Pari, Rayneld Fidel \\ 
+     Mamani Flores, Natan \\ 
+     Mendoza Quispe, Jose Daniel \\ 
+     Polo Chura, Marco Rosauro}
+    {Ingeniería de Informatica y Sistemas}
+    {Departamento Académico de Ingeniería de Informatica y de Sistemas \\ 
+     Asesor: Ugarte Rojas, Héctor Eduardo}
+    {Semestre 2025-II}
 \include{abstract}
 \include{ack}
 \include{contents}
@@ -48,13 +50,23 @@
 \include{subcapitulo01_03}
 \include{subcapitulo01_04}
 \include{capitulo02}
+\include{SO01}
+\include{SO02}
+\include{SO03}
+\include{SO04}
+\include{SO05}
+\include{SO06}
+\include{SO07}
+\include{SO08}
+\include{SO09}
+\include{SO10}
 \include{capitulo03}
 
 %\printbibliography
 \include{bib}
 % If you have no appendices, remove the following two lines.
 % If you have more appdences, add them as necessary.
-\appendix
-\include{apdxa}
+%\appendix
+%\include{apdxa}
 
 \end{document}
