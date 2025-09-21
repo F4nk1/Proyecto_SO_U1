@@ -19,7 +19,53 @@ Entre las funciones principales de la gestión de procesos se encuentra la creac
 Otra función esencial es la planificación o \textit{scheduling}, que consiste en decidir el orden en el que los procesos acceden a la CPU. Para ello se emplean algoritmos como FIFO, round robin o planificación basada en prioridades, según los objetivos de rendimiento y equidad del sistema \citep{juan2015}.  
 
 Asimismo, la gestión de procesos incluye mecanismos de sincronización y comunicación, conocidos como IPC (Inter-Process Communication). Estos permiten que los procesos se coordinen y compartan información de manera segura, evitando condiciones de carrera y conflictos al acceder a recursos comunes \citep{wikipedia}.  
-
+\newpage
+\begin{muntab}{|p{4cm}|p{9cm}|}
+  {razones_creacion_procesos}
+  {Razones comunes para la creación de procesos en un sistema operativo \cite{sistemas_operativos}}
+\hline
+\textbf{Tipo de proceso} & \textbf{Descripción} \\
+\hline
+Proceso por lotes & El SO procesa trabajos en lote desde cinta/disco. Lee secuencias de control de trabajos automáticamente. \\
+\hline
+Sesión interactiva & Usuario inicia sesión desde un terminal. \\
+\hline
+Servicio del sistema & El SO crea procesos para servicios en segundo plano (ej: impresión) sin espera del usuario. \\
+\hline
+Proceso hijo & Proceso existente crea nuevos procesos para modularidad o paralelismo. \\
+\hline
+\end{muntab}
+\newpage
+\begin{muntab}{|p{4cm}|p{10cm}|}
+  {razones_terminacion}
+  {Razones comunes para la terminación de procesos en un sistema operativo \cite{sistemas_operativos}}
+\hline
+\textbf{Causa de terminación} & \textbf{Descripción} \\
+\hline
+Finalización normal & Completación voluntaria mediante llamada al sistema. \\
+\hline
+Límite de tiempo & Exceso de tiempo de ejecución o espera. \\
+\hline
+Memoria no disponible & Memoria insuficiente o acceso no permitido. \\
+\hline
+Error de protección & Uso no autorizado de recursos. \\
+\hline
+Error aritmético & Operación inválida (ej: división por cero). \\
+\hline
+Fallo de E/S & Error en operación de entrada/salida. \\
+\hline
+Instrucción inválida & Ejecución de instrucción inexistente. \\
+\hline
+Instrucción privilegiada & Uso de instrucción reservada al SO. \\
+\hline
+Datos inapropiados & Datos erróneos o no inicializados. \\
+\hline
+Intervención externa & Terminación por operador o SO. \\
+\hline
+Terminación por padre & Finalización por proceso padre (automática o solicitada). \\
+\hline
+\end{muntab}
+\newpage
 \subsection{Gestión de memoria}
 
 La gestión de memoria es esencial para que el sistema operativo asigne y libere espacio en la memoria principal (RAM) a los procesos en ejecución. Su función principal consiste en aislar los espacios de direcciones de cada programa, de modo que puedan ejecutarse de manera concurrente sin interferir entre sí. Gracias a este control, la CPU puede cargar en memoria las instrucciones y datos necesarios de cada proceso en el momento oportuno. En términos generales, el administrador de memoria organiza los procesos de tal manera que se obtenga la máxima utilidad del espacio disponible, trasladando a la memoria principal la información que debe ejecutarse en cada instante \citep{wikipedia1}.  
